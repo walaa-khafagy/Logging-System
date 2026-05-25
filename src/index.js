@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 import developersRouter from "./developers/developers.router.js";
 import applicationsRouter from "./applications/applications.router.js";
-//import logsRouter from "./logs/logs.router.js";
+import logsRouter from "./logs/logs.router.js";
 
 import errorMiddleware from "./middlewares/error.middleware.js";
 
@@ -16,7 +16,7 @@ server.use(express.json());
 
 server.use("/api/developers", developersRouter);
 server.use("/api/applications", applicationsRouter);
-//server.use("/api/logs", logsRouter);
+server.use("/api/applications", logsRouter);
 
 server.use(errorMiddleware);
 
